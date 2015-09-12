@@ -9,6 +9,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var browserify = require('gulp-browserify');
 var minifyCss = require('gulp-minify-css');
+var reactify = require('reactify');
 
 //Lint Javascript
 gulp.task('lint', function() {
@@ -32,6 +33,7 @@ gulp.task('scripts', function() {
   gulp.src('src/js/main.js')
     .pipe(browserify({
       insertGlobals: true,
+      transform: [reactify],
       debug: true
     }))
     .pipe(gulp.dest('build/js'))
@@ -45,4 +47,4 @@ gulp.task('watch', function() {
   gulp.watch('scss/*.scss', ['sass']);
 });
 
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('default', ['lint', 'sass', 'scripts']);

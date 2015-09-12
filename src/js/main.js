@@ -1,4 +1,12 @@
 //Add Modules
-var $ = require('jquery');
+var React = require('react');
 
-$('#container').html('Initial Commit');
+var MyComponent = React.createClass({
+  render: function(){
+    return (
+      <h1>{this.props.name}</h1>
+    );
+  }
+});
+
+React.render(<MyComponent name="Travis Weidenbenner" />, document.getElementById('container'));
