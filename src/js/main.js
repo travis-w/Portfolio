@@ -11,7 +11,7 @@ var Portfolio = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="portfolio">
         <h1>{this.state.name}</h1>
         <ul>
           {
