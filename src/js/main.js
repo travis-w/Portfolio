@@ -1,12 +1,28 @@
 //Add Modules
 var React = require('react');
 
-var MyComponent = React.createClass({
-  render: function(){
-    return (
-      <h1>{this.props.name}</h1>
-    );
-  }
+var Portfolio = React.createClass({
+  getInitialState: function() {
+    return {
+      name: 'Travis Weidenbenner',
+      pages: ['Projects', 'Experience', 'Social Media', 'About']
+    }
+  },
+
+  render: function() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+        <ul>
+          {
+            this.state.pages.map(function(page) {
+              return <li>{page}</li>
+            })
+          }
+        </ul>
+      </div>
+    )
+  }
 });
 
-React.render(<MyComponent name="Travis Weidenbenner" />, document.getElementById('container'));
+React.render(<Portfolio />, document.getElementById('container'));
