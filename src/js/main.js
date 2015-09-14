@@ -1,6 +1,7 @@
 //Add Modules
 var React = require('react');
 
+//Profile Data -- Will Be stored in File eventually
 var profileData = {
   name: 'Travis Weidenbenner',
   pages: [
@@ -90,6 +91,7 @@ var ProjectList = React.createClass({
   }
 });
 
+//Single Navigation Link
 var NavItem = React.createClass({
   render: function() {
     return (
@@ -98,6 +100,7 @@ var NavItem = React.createClass({
   }
 });
 
+//Main Component
 var Portfolio = React.createClass({
   getInitialState: function() {
     return {
@@ -119,6 +122,7 @@ var Portfolio = React.createClass({
   },
 
   render: function() {
+    //Determine which component to render
     var contentPage;
     switch (this.state.page) {
       case 0:
@@ -133,6 +137,7 @@ var Portfolio = React.createClass({
         <h1 onClick={this.handleClick}>{this.state.profileData.name}</h1>
         <ul>
           {
+            //Loop through pages and create a nav link for each
             this.state.profileData.pages.map(function(page) {
               return <NavItem title={page.title} key={page.title} onClick={this.changePage.bind(this, page.id)}/>
             }, this)
@@ -144,4 +149,5 @@ var Portfolio = React.createClass({
   }
 });
 
+//Render portfolio
 React.render(<Portfolio />, document.getElementById('container'));
