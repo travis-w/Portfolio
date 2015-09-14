@@ -1,6 +1,68 @@
 //Add Modules
 var React = require('react');
 
+var profileData = {
+  name: 'Travis Weidenbenner',
+  pages: [
+    {
+      id: 1,
+      title: 'Projects',
+      projects: [
+        {
+          title: 'Portfolio',
+          description: 'In order to learn ReactJS and become comfortable ' +
+                       'with build tools like Gulp and Browserify, I ' +
+                       'decided to re-create my portfolio and move away ' +
+                       'from WordPress.',
+          tools: ['NodeJS', 'ReactJS', 'Browserify', 'Gulp', 'HTML', 'SASS'],
+          link: 'http://thetravisw.com',
+          source: 'https://github.com/travis-w/Portfolio'
+        },
+        {
+          title: 'Custom Twitch Alerts',
+          description: 'I have been working with a Twitch streamer in ' +
+                       'order to offer features to allow his viewers more ' +
+                       'opportunities for interaction.',
+          tools: ['NodeJS', 'HTML', 'CSS', 'JavaScript']
+        },
+        {
+          title: 'Search On Twitter',
+          description: 'Twitter is the best source for information on ' +
+                       'current events.  Search On Twitter is a Google ' +
+                       'Chrome extension that allows you to search Twitter ' +
+                       'at any time. Just higlight what you want to search ' +
+                       'and you will have the option to search Twitter ' +
+                       'for the highlighted text in the context menu.',
+          tools: ['JavaScript', 'Google Chrome API'],
+          link: 'https://chrome.google.com/webstore/detail/search-on-twitter/dhpmpdpphfgejncefefmdhklfbliefkm',
+          source: 'https://github.com/travis-w/Search-On-Twitter'
+        },
+        {
+          title: 'CampusAlly',
+          description: 'CampusAlly that will allow students to collaborate ' +
+                       'on and share notes for classes. The development ' +
+                       'has currently been put on hold while I expand my ' +
+                       'knowledge of web development.',
+          tools: ['PHP', 'HTML', 'CSS', 'MySQL'],
+          link: 'http://campusally.com'
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Experience'
+    },
+    {
+      id: 3,
+      title: 'Social Media'
+    },
+    {
+      id: 4,
+      title: 'About'
+    }
+  ]
+};
+
 //Display A Single Project
 var Project = React.createClass({
   render: function() {
@@ -28,63 +90,55 @@ var ProjectList = React.createClass({
   }
 });
 
+var NavItem = React.createClass({
+  render: function() {
+    return (
+      <li key={this.props.key} onClick={this.props.onClick}>{this.props.title}</li>
+    )
+  }
+});
+
 var Portfolio = React.createClass({
   getInitialState: function() {
     return {
-      name: 'Travis Weidenbenner',
-      pages: [
-        {
-          title: 'Projects',
-          projects: [
-            {
-              title: 'Custom Twitch Alerts',
-              description: 'I have been working with a Twitch streamer in '
-                         + 'order to offer features to allow his viewers more '
-                         + 'opportunities for interaction.',
-              tools: ['NodeJS', 'HTML', 'CSS', 'JavaScript']
-            },
-            {
-              title: 'Search On Twitter',
-              description: 'Twitter is the best source for information on '
-                         + 'current events.  Search On Twitter is a Google '
-                         + 'Chrome extension that allows you to search Twitter '
-                         + 'at any time. Just higlight what you want to search '
-                         + 'and you will have the option to search Twitter '
-                         + 'for the highlighted text in the context menu.',
-              tools: ['JavaScript', 'Google Chrome API'],
-              link: 'https://chrome.google.com/webstore/detail/search-on-twitter/dhpmpdpphfgejncefefmdhklfbliefkm',
-              source: 'https://github.com/travis-w/Search-On-Twitter'
-            },
-            {
-              title: 'CampusAlly',
-              description: 'CampusAlly that will allow students to collaborate '
-                         + 'on and share notes for classes. The development '
-                         + 'has currently been put on hold while I expand my '
-                         + 'knowledge of web development.',
-              tools: ['PHP', 'HTML', 'CSS', 'MySQL'],
-              link: 'http://campusally.com'
-            }
-          ]
-        },
-        { title: 'Experience' },
-        { title: 'Social Media' },
-        { title: 'About' }
-      ]
+      profileData: profileData,
+      page: 0
     }
   },
 
+  changePage: function(pageId) {
+    //Set pageId to zero if same as current page id (to hide current page)
+    if (pageId === this.state.page) {
+      pageId = 0;
+    }
+
+    this.setState({
+      profileData: profileData,
+      page: pageId
+    });
+  },
+
   render: function() {
+    var contentPage;
+    switch (this.state.page) {
+      case 0:
+        contentPage = '';
+        break;
+      case 1:
+        contentPage = <ProjectList projects={this.state.profileData.pages[0].projects} />;
+        break;
+    }
     return (
       <div className="portfolio">
-        <h1>{this.state.name}</h1>
+        <h1 onClick={this.handleClick}>{this.state.profileData.name}</h1>
         <ul>
           {
-            this.state.pages.map(function(page) {
-              return <li key={page.title}>{page.title}</li>
-            })
+            this.state.profileData.pages.map(function(page) {
+              return <NavItem title={page.title} key={page.title} onClick={this.changePage.bind(this, page.id)}/>
+            }, this)
           }
         </ul>
-        <ProjectList projects={this.state.pages[0].projects} />
+        {contentPage}
       </div>
     )
   }
