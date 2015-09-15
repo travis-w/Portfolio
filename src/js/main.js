@@ -1,5 +1,5 @@
 //Add Modules
-var React = require('react');
+var React = require('react/addons');
 
 //Profile Data -- Will Be stored in File eventually
 var profileData = {
@@ -63,6 +63,8 @@ var profileData = {
     }
   ]
 };
+
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 //Display A Single Project
 var Project = React.createClass({
@@ -143,7 +145,9 @@ var Portfolio = React.createClass({
             }, this)
           }
         </ul>
-        {contentPage}
+        <ReactCSSTransitionGroup transitionName="slide">
+          {contentPage}
+        </ReactCSSTransitionGroup>
       </div>
     )
   }

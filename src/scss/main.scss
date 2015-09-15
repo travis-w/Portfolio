@@ -85,5 +85,27 @@ body, html {
   li:hover {
     cursor: pointer;
   }
+}
 
+//Content Transition
+.slide-enter {
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+.slide-enter.slide-enter-active {
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: all .5s ease;
+}
+
+.slide-leave {
+  transform-origin: bottom;
+  transform: scaleY(1);
+}
+
+.slide-leave.slide-leave-active {
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: all .5s ease;
 }
