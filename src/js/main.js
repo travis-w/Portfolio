@@ -134,8 +134,8 @@ var Portfolio = React.createClass({
     }
     return (
       <div className="portfolio">
-        <h1 onClick={this.handleClick}>{this.state.profileData.name}</h1>
-        <ul>
+        <div className="logo"></div>
+        <ul className="navigation">
           {
             //Loop through pages and create a nav link for each
             this.state.profileData.pages.map(function(page) {
