@@ -97,7 +97,9 @@ var ProjectList = React.createClass({
 var NavItem = React.createClass({
   render: function() {
     return (
-      <li key={this.props.key} onClick={this.props.onClick}>{this.props.title}</li>
+      <li onClick={this.props.onClick}>
+        <span className="nav-link">{this.props.title}</span>
+      </li>
     )
   }
 });
