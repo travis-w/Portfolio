@@ -16,8 +16,16 @@ var profileData = {
                        'decided to re-create my portfolio and move away ' +
                        'from WordPress.',
           tools: ['NodeJS', 'ReactJS', 'Browserify', 'Gulp', 'HTML', 'SASS'],
-          link: 'http://thetravisw.com',
-          source: 'https://github.com/travis-w/Portfolio'
+          links: [
+            {
+              title: 'Link',
+              url: 'http://thetravisw.com'
+            },
+            {
+              title: 'Source',
+              url: 'http://github.com/travis-w/Portfolio'
+            }
+          ]
         },
         {
           title: 'Custom Twitch Alerts',
@@ -73,6 +81,13 @@ var Project = React.createClass({
       <div className="project">
         <h1>{this.props.project.title}</h1>
         {this.props.project.description}
+        <ul className="project-links">
+        {
+          this.props.project.links.map(function(link) {
+            <li><a href={link.url} key={link.title}>{link.title}</a></li>
+          })
+        }
+        </ul>
       </div>
     )
   }
