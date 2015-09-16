@@ -1,5 +1,6 @@
 //Import Google Font
 @import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,700,500);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 $primary-color: #0094FF; //Main background color
 $accent-color: #333333;  //Color for accenting panels.
@@ -16,6 +17,8 @@ body, html {
   height: 100%;
 
   background-color: $primary-color;
+
+  font-family: 'Roboto', sans-serif;
 }
 
 //Container
@@ -36,7 +39,7 @@ body, html {
 }
 //Portfolio logo
 .logo {
-  margin: -40px auto 5px auto;
+  margin: 10px auto 5px auto;
 	background-image: url('../img/logo.png');
 	width: 450px;
 	height: 50px;
@@ -49,21 +52,71 @@ body, html {
   padding: 10px;
   margin: 10px 0px;
   box-shadow: 1px 1px 2px $shadow-color;
+  font-size: 15px;
 
   h1 {
+    font-family: 'Maven Pro', sans-serif;
     width: 100%;
     color: $header-color;
     background-color: $accent-color;
     margin: -10px -10px 10px -10px;
     padding: 5px 10px;
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
+}
+
+.project:first-of-type {
+  margin-top: -40px;
+}
+
+//Links on project panels
+.project-links {
+  margin: 5px 0 0;
+  padding: 5px 0 0;
+
+  width: 100%;
+
+  border-top: 1px $shadow-color solid;
+
+  //Remove Bullets
+  list-style-type: none;
+
+  //Font Style
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: $primary-color;
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $accent-color;
+  }
+
+  //Dispaly horizontal list
+  li {
+    display: inline;
+  }
+
+  //Separate navigation items with pipes
+  li:after {
+    content: " | ";
+  }
+
+  li:last-of-type::after {
+    content: "";
+  }
+
 }
 
 .navigation {
   //No margins/padding
   margin: 0;
   padding: 0;
+
+  height: 80px;
 
   //Remove bullets
   list-style-type: none;

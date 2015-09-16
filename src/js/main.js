@@ -32,7 +32,8 @@ var profileData = {
           description: 'I have been working with a Twitch streamer in ' +
                        'order to offer features to allow his viewers more ' +
                        'opportunities for interaction.',
-          tools: ['NodeJS', 'HTML', 'CSS', 'JavaScript']
+          tools: ['NodeJS', 'HTML', 'CSS', 'JavaScript'],
+          links: []
         },
         {
           title: 'Search On Twitter',
@@ -43,8 +44,16 @@ var profileData = {
                        'and you will have the option to search Twitter ' +
                        'for the highlighted text in the context menu.',
           tools: ['JavaScript', 'Google Chrome API'],
-          link: 'https://chrome.google.com/webstore/detail/search-on-twitter/dhpmpdpphfgejncefefmdhklfbliefkm',
-          source: 'https://github.com/travis-w/Search-On-Twitter'
+          links: [
+            {
+              title: 'Chrome Web Store',
+              url: 'https://chrome.google.com/webstore/detail/search-on-twitter/dhpmpdpphfgejncefefmdhklfbliefkm'
+            },
+            {
+              title: 'Source',
+              url: 'https://github.com/travis-w/Search-On-Twitter'
+            }
+          ]
         },
         {
           title: 'CampusAlly',
@@ -53,7 +62,12 @@ var profileData = {
                        'has currently been put on hold while I expand my ' +
                        'knowledge of web development.',
           tools: ['PHP', 'HTML', 'CSS', 'MySQL'],
-          link: 'http://campusally.com'
+          links: [
+            {
+              title: 'Link',
+              url: 'http://campusally.com'
+            }
+          ]
         }
       ]
     },
@@ -84,7 +98,7 @@ var Project = React.createClass({
         <ul className="project-links">
         {
           this.props.project.links.map(function(link) {
-            <li><a href={link.url} key={link.title}>{link.title}</a></li>
+            return <li><a href={link.url} key={link.title}>{link.title}</a></li>
           })
         }
         </ul>
@@ -162,9 +176,7 @@ var Portfolio = React.createClass({
             }, this)
           }
         </ul>
-        <ReactCSSTransitionGroup transitionName="slide">
-          {contentPage}
-        </ReactCSSTransitionGroup>
+        {contentPage}
       </div>
     )
   }
