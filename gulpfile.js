@@ -20,7 +20,7 @@ gulp.task('lint', function() {
 
 // Compile Our Sass
 gulp.task('sass', function() {
-  return gulp.src('src/scss/*.scss')
+  return gulp.src('src/scss/main.scss')
     .pipe(sass())
     .pipe(gulp.dest('build/css'))
     .pipe(minifyCss())

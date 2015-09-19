@@ -2,6 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,700,500);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
+//Import Glyphicons
+@import 'glyphicons-social';
+
 $primary-color: #0094FF; //Main background color
 $accent-color: #333333;  //Color for accenting panels.
 $panel-color: #FFFFFF;   //Color of content panels
@@ -172,4 +175,19 @@ body, html {
   transform-origin: top;
   transform: scaleY(0);
   transition: all .5s ease;
+}
+
+.social-media {
+  font-size: 32px;
+  letter-spacing: 32px;
+  text-align: center;
+
+  a {
+    color: $accent-color;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $primary-color;
+  }
 }

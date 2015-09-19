@@ -77,11 +77,34 @@ var profileData = {
     },
     {
       id: 3,
-      title: 'Social Media'
+      title: 'Social Media',
+      links: [
+        {
+          title: 'Twitter',
+          url: 'http://twitter.com/tweidenbenner',
+          glyphicon: 'social-twitter'
+        },
+        {
+          title: 'GitHub',
+          url: 'http://github.com/travis-w',
+          glyphicon: 'social-github'
+        },
+        {
+          title: 'Facebook',
+          url: 'https://www.facebook.com/travis.weidenbenner',
+          glyphicon: 'social-facebook'
+        },
+        {
+          title: 'Email',
+          url: 'mailto:travis@thetravisw.com',
+          glyphicon: 'social-e-mail'
+        }
+      ]
     },
     {
       id: 4,
-      title: 'About'
+      title: 'About',
+      aboutMe: 'About Me'
     }
   ]
 };
@@ -133,6 +156,40 @@ var NavItem = React.createClass({
   }
 });
 
+//Social Media Component
+var SocialMedia = React.createClass({
+  render: function() {
+    return (
+      <div className="project-list">
+        <div className="project">
+          <h1>Social Media</h1>
+          <div className="social-media">
+          {
+            this.props.links.map(function(link) {
+              var glyphClass = "social " + link.glyphicon;
+              return <a href={link.url} key={link.title} title={link.title} target="_blank"><span className={glyphClass}></span></a>
+            })
+          }
+          </div>
+        </div>
+      </div>
+    )
+  }
+});
+
+var AboutMe = React.createClass({
+  render: function() {
+    return (
+      <div className="project-list">
+        <div className="project">
+          <h1>{this.props.page.title}</h1>
+          {this.props.page.aboutMe}
+        </div>
+      </div>
+    )
+  }
+});
+
 //Main Component
 var Portfolio = React.createClass({
   getInitialState: function() {
@@ -163,6 +220,12 @@ var Portfolio = React.createClass({
         break;
       case 1:
         contentPage = <ProjectList projects={this.state.profileData.pages[0].projects} />;
+        break;
+      case 3:
+        contentPage = <SocialMedia links={this.state.profileData.pages[2].links} />;
+        break;
+      case 4:
+        contentPage = <AboutMe page={this.state.profileData.pages[3]} />;
         break;
     }
     return (
