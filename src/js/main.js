@@ -31,7 +31,9 @@ var profileData = {
           title: 'Custom Twitch Alerts',
           description: 'I have been working with a Twitch streamer in ' +
                        'order to offer features to allow his viewers more ' +
-                       'opportunities for interaction.',
+                       'opportunities for interaction. Custom Alerts are ' +
+                       'currently a work in progress so there are no ' +
+                       'examples available at the moment.',
           tools: ['NodeJS', 'HTML', 'CSS', 'JavaScript'],
           links: []
         },
@@ -52,6 +54,22 @@ var profileData = {
             {
               title: 'Source',
               url: 'https://github.com/travis-w/Search-On-Twitter'
+            }
+          ]
+        },
+        {
+          title: 'Link Sharing',
+          description: 'A Google Chrome extension that allows multiple users ' +
+                       'to share links between eachother.',
+          tools: ['Javascript', 'Google Chrome API'],
+          links: [
+            {
+              title: 'Chrome Web Store',
+              url: 'https://chrome.google.com/webstore/detail/link-sharing/haehadeohhghodnfohinokocaaellnga'
+            },
+            {
+              title: 'Source',
+              url: 'https://github.com/travis-w/Link-Sharing'
             }
           ]
         },
@@ -121,7 +139,7 @@ var Project = React.createClass({
         <ul className="project-links">
         {
           this.props.project.links.map(function(link) {
-            return <li><a href={link.url} key={link.title}>{link.title}</a></li>
+            return <li><a href={link.url} key={link.title} target="_blank">{link.title}</a></li>
           })
         }
         </ul>
