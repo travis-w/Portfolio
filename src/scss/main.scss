@@ -30,7 +30,7 @@ body, html {
   height: 100%;
 
   width: 90%;
-  max-width: 600px;
+  max-width: 600px !important;
 
   margin-left: auto;
   margin-right: auto;
@@ -190,4 +190,13 @@ body, html {
   a:hover {
     color: $primary-color;
   }
+}
+
+.skill {
+  display: inline-block;
+  margin: 5px 5px;
+  padding: 2px;
+  background-color: $primary-color;
+
+  border-radius: 3px;
 }

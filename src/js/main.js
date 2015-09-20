@@ -91,7 +91,20 @@ var profileData = {
     },
     {
       id: 2,
-      title: 'Experience'
+      title: 'Experience',
+      skills: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'ReactJS',
+               'AngularJS', 'NodeJS', 'SQL', 'PHP', 'C++', 'ASP.NET',
+               'C#'],
+       jobs: [
+         {
+           employer: 'Nucor-Yamato Steel',
+           title: 'Systems Analyst Intern',
+           startDate: 'May 2014',
+           endDate: 'January 2015',
+           description: 'Created and maintained several C#/ASP.NET ' +
+                        'applications used metalurgists and lab technichians.'
+         }
+       ]
     },
     {
       id: 3,
@@ -208,6 +221,33 @@ var AboutMe = React.createClass({
   }
 });
 
+//Skills Component
+var Skills = React.createClass({
+  render: function() {
+    return (
+      <div className="project">
+        <h1>Programming Languages</h1>
+        {
+          this.props.skillList.map(function(skill) {
+            return <span key={skill} className="skill">{skill}</span>
+          })
+        }
+      </div>
+    )
+  }
+});
+
+//Experience page
+var Experience = React.createClass({
+  render: function() {
+    return (
+      <div className="project-list">
+        <Skills skillList={this.props.page.skills} />
+      </div>
+    )
+  }
+});
+
 //Main Component
 var Portfolio = React.createClass({
   getInitialState: function() {
@@ -238,6 +278,9 @@ var Portfolio = React.createClass({
         break;
       case 1:
         contentPage = <ProjectList projects={this.state.profileData.pages[0].projects} />;
+        break;
+      case 2:
+        contentPage = <Experience page={this.state.profileData.pages[1]} />;
         break;
       case 3:
         contentPage = <SocialMedia links={this.state.profileData.pages[2].links} />;
