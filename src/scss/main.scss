@@ -1,6 +1,6 @@
 //Import Google Font
 @import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,700,500);
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 
 //Import Glyphicons
 @import 'glyphicons-social';
@@ -10,6 +10,7 @@ $accent-color: #333333;  //Color for accenting panels.
 $panel-color: #FFFFFF;   //Color of content panels
 $shadow-color: #888888;  //Shadow of content panels
 $header-color: #E5E5E5;  //Header font color
+$gray: #6b6b6b;
 
 
 body, html {
@@ -195,8 +196,41 @@ body, html {
 .skill {
   display: inline-block;
   margin: 5px 5px;
-  padding: 2px;
+  padding: 4px;
   background-color: $primary-color;
 
   border-radius: 3px;
+
+  font-size: 14px;
+  font-weight: 700;
+  color: $accent-color;
+}
+
+.employment {
+  width: 100%;
+  color: $accent-color;
+
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid $accent-color;
+
+  h2 {
+    font-size: 16px;
+    width: 100%;
+
+    small {
+      color: $primary-color;
+    }
+
+    .employment-date {
+      float: right;
+      font-size: 14px;
+      color: $gray;
+    }
+  }
+}
+
+.employment:last-of-type {
+  border: 0 !important;
+  padding-bottom: 0 !important;
 }

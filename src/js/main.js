@@ -92,19 +92,20 @@ var profileData = {
     {
       id: 2,
       title: 'Experience',
-      skills: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'ReactJS',
-               'AngularJS', 'NodeJS', 'SQL', 'PHP', 'C++', 'ASP.NET',
-               'C#'],
-       jobs: [
-         {
-           employer: 'Nucor-Yamato Steel',
-           title: 'Systems Analyst Intern',
-           startDate: 'May 2014',
-           endDate: 'January 2015',
-           description: 'Created and maintained several C#/ASP.NET ' +
+      languages: ['HTML', 'CSS', 'JavaScript', 'SQL', 'PHP', 'C++', 'ASP.NET',
+                  'C#'],
+      frameworks: ['Bootstrap', 'ReactJS', 'AngularJS', 'NodeJS', 'Knockout',
+                    'ExpressJS'],
+      jobs: [
+        {
+          employer: 'Nucor-Yamato Steel',
+          title: 'Systems Analyst Intern',
+          startDate: 'May 2014',
+          endDate: 'January 2015',
+          description: 'Created and maintained several C#/ASP.NET ' +
                         'applications used metalurgists and lab technichians.'
-         }
-       ]
+        }
+      ]
     },
     {
       id: 3,
@@ -222,11 +223,11 @@ var AboutMe = React.createClass({
 });
 
 //Skills Component
-var Skills = React.createClass({
+var SkillPanel = React.createClass({
   render: function() {
     return (
       <div className="project">
-        <h1>Programming Languages</h1>
+        <h1>{this.props.title}</h1>
         {
           this.props.skillList.map(function(skill) {
             return <span key={skill} className="skill">{skill}</span>
@@ -237,12 +238,38 @@ var Skills = React.createClass({
   }
 });
 
+var PastEmployment = React.createClass({
+    render: function() {
+      return (
+        <div className="project">
+          <h1>Employment</h1>
+          {
+            this.props.employment.map(function(job) {
+              return (
+                <div className="employment" key={job.employer}>
+                  <h2>
+                    {job.employer} <small>{job.title}</small>
+                    <span className="employment-date">{job.startDate} - {job.endDate}</span>
+                  </h2>
+
+                  {job.description}
+                </div>
+              )
+            })
+          }
+        </div>
+      )
+    }
+})
+
 //Experience page
 var Experience = React.createClass({
   render: function() {
     return (
       <div className="project-list">
-        <Skills skillList={this.props.page.skills} />
+        <SkillPanel title="Programming Languages" skillList={this.props.page.languages} />
+        <SkillPanel title="Libraries/Frameworks" skillList={this.props.page.frameworks} />
+        <PastEmployment employment={this.props.page.jobs} />
       </div>
     )
   }
