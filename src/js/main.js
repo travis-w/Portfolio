@@ -38,6 +38,21 @@ var profileData = {
           links: []
         },
         {
+          title: 'Twitch Plays Tetris',
+          description: 'Twitch Plays Tetris is an experiment in which Tetris ' +
+                       'is played by a group of viewers collaborating ' +
+                       'through a livestream chat. We used JS Tetris for ' +
+                       'the actual game and I created the functionality to ' +
+                       'interact with the chatroom.',
+         tools: ['JavaScript', 'HTML', 'CSS'],
+         links: [
+           {
+             title: 'Link',
+             url: 'http://twitch.tv/tetrisplaystwitch'
+           }
+         ]
+        },
+        {
           title: 'Search On Twitter',
           description: 'Twitter is the best source for information on ' +
                        'current events.  Search On Twitter is a Google ' +
@@ -136,7 +151,11 @@ var profileData = {
     {
       id: 4,
       title: 'About',
-      aboutMe: 'About Me'
+      aboutMe: 'I am a student at Missouri University of Science and ' +
+               'Technology studying computer science.  In my spare time ' +
+               'I like to work on various projects and learning new concepts. ' +
+               'Outside of programming, I enjoy playing and watching sports, ' +
+               'playing video games, and hanging out with friends and family.'
     }
   ]
 };
