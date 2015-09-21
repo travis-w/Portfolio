@@ -110,7 +110,7 @@ var profileData = {
       languages: ['HTML', 'CSS', 'JavaScript', 'SQL', 'PHP', 'C++', 'ASP.NET',
                   'C#'],
       frameworks: ['Bootstrap', 'ReactJS', 'AngularJS', 'NodeJS', 'Knockout',
-                    'ExpressJS'],
+                    'ExpressJS', 'jQuery'],
       jobs: [
         {
           employer: 'Nucor-Yamato Steel',
@@ -118,7 +118,7 @@ var profileData = {
           startDate: 'May 2014',
           endDate: 'January 2015',
           description: 'Created and maintained several C#/ASP.NET ' +
-                        'applications used metalurgists and lab technichians.'
+                        'applications used metalurgists and lab technicians.'
         }
       ]
     },
