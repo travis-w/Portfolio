@@ -1,5 +1,13 @@
 //Add Modules
-var React = require('react/addons');
+var React = require('react');
+var Project = require('./components/Project.jsx');
+var ProjectList = require('./components/ProjectList.jsx');
+var NavItem = require('./components/NavItem.jsx');
+var SocialMedia = require('./components/SocialMedia.jsx');
+var AboutMe = require('./components/AboutMe.jsx');
+var SkillPanel = require('./components/SkillPanel.jsx');
+var PastEmployment = require('./components/PastEmployment.jsx');
+var Experience = require('./components/Experience.jsx');
 
 //Profile Data -- Will Be stored in File eventually
 var profileData = {
@@ -118,7 +126,7 @@ var profileData = {
           startDate: 'May 2014',
           endDate: 'January 2015',
           description: 'Created and maintained several C#/ASP.NET ' +
-                        'applications used metalurgists and lab technicians.'
+                        'applications used by metalurgists and lab technicians.'
         }
       ]
     },
@@ -159,140 +167,6 @@ var profileData = {
     }
   ]
 };
-
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-
-//Display A Single Project
-var Project = React.createClass({
-  render: function() {
-    return (
-      <div className="project">
-        <h1>{this.props.project.title}</h1>
-        {this.props.project.description}
-        <ul className="project-links">
-        {
-          this.props.project.links.map(function(link) {
-            return <li><a href={link.url} key={link.title} target="_blank">{link.title}</a></li>
-          })
-        }
-        </ul>
-      </div>
-    )
-  }
-});
-
-//Display all projects
-var ProjectList = React.createClass({
-  render: function() {
-    return (
-      <div className="project-list">
-      {
-        this.props.projects.map(function(project) {
-          return <Project key={project.title} project={project} />
-        })
-      }
-      </div>
-    )
-  }
-});
-
-//Single Navigation Link
-var NavItem = React.createClass({
-  render: function() {
-    return (
-      <li onClick={this.props.onClick}>
-        <span className="nav-link">{this.props.title}</span>
-      </li>
-    )
-  }
-});
-
-//Social Media Component
-var SocialMedia = React.createClass({
-  render: function() {
-    return (
-      <div className="project-list">
-        <div className="project">
-          <h1>Social Media</h1>
-          <div className="social-media">
-          {
-            this.props.links.map(function(link) {
-              var glyphClass = "social " + link.glyphicon;
-              return <a href={link.url} key={link.title} title={link.title} target="_blank"><span className={glyphClass}></span></a>
-            })
-          }
-          </div>
-        </div>
-      </div>
-    )
-  }
-});
-
-var AboutMe = React.createClass({
-  render: function() {
-    return (
-      <div className="project-list">
-        <div className="project">
-          <h1>{this.props.page.title}</h1>
-          {this.props.page.aboutMe}
-        </div>
-      </div>
-    )
-  }
-});
-
-//Skills Component
-var SkillPanel = React.createClass({
-  render: function() {
-    return (
-      <div className="project">
-        <h1>{this.props.title}</h1>
-        {
-          this.props.skillList.map(function(skill) {
-            return <span key={skill} className="skill">{skill}</span>
-          })
-        }
-      </div>
-    )
-  }
-});
-
-var PastEmployment = React.createClass({
-    render: function() {
-      return (
-        <div className="project">
-          <h1>Employment</h1>
-          {
-            this.props.employment.map(function(job) {
-              return (
-                <div className="employment" key={job.employer}>
-                  <h2>
-                    {job.employer} <small>{job.title}</small>
-                    <span className="employment-date">{job.startDate} - {job.endDate}</span>
-                  </h2>
-
-                  {job.description}
-                </div>
-              )
-            })
-          }
-        </div>
-      )
-    }
-})
-
-//Experience page
-var Experience = React.createClass({
-  render: function() {
-    return (
-      <div className="project-list">
-        <SkillPanel title="Programming Languages" skillList={this.props.page.languages} />
-        <SkillPanel title="Libraries/Frameworks" skillList={this.props.page.frameworks} />
-        <PastEmployment employment={this.props.page.jobs} />
-      </div>
-    )
-  }
-});
 
 //Main Component
 var Portfolio = React.createClass({

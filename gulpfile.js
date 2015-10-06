@@ -34,7 +34,7 @@ gulp.task('scripts', function() {
     .pipe(browserify({
       insertGlobals: true,
       transform: [reactify],
-      debug: true
+      debug: false
     }))
     .pipe(gulp.dest('build/js'))
     .pipe(uglify())
