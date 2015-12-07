@@ -126,7 +126,7 @@ var profileData = {
           startDate: 'May 2014',
           endDate: 'January 2015',
           description: 'Created and maintained several C#/ASP.NET ' +
-                        'applications used by metalurgists and lab technicians.'
+                        'applications used by metallurgists and lab technicians.'
         }
       ]
     },
