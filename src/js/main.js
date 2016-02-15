@@ -18,6 +18,26 @@ var profileData = {
       title: 'Projects',
       projects: [
         {
+          title: 'Checkers',
+          description: 'Python checkers game played in the console. I am ' +
+                       'attempting to create the game from scratch and ' +
+                       'hope to add the ability to create AIs that are able ' +
+                       'to compete against each other. I am also trying to ' +
+                       'strengthen my knowledge of Unit Tests with this ' +
+                       'project.',
+          tools: ['Python'],
+          links: [
+            {
+              title: 'Source',
+              url: 'https://github.com/travis-w/checkers'
+            },
+            {
+              title: 'CI',
+              url: 'https://travis-ci.org/travis-w/checkers'
+            }
+          ]
+        },
+        {
           title: 'Portfolio',
           description: 'In order to learn ReactJS and become comfortable ' +
                        'with build tools like Gulp and Browserify, I ' +
@@ -116,7 +136,7 @@ var profileData = {
       id: 2,
       title: 'Experience',
       languages: ['HTML', 'CSS', 'JavaScript', 'SQL', 'PHP', 'C++', 'ASP.NET',
-                  'C#'],
+                  'C#', 'Python'],
       frameworks: ['Bootstrap', 'ReactJS', 'AngularJS', 'NodeJS', 'Knockout',
                     'ExpressJS', 'jQuery'],
       jobs: [
