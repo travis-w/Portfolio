@@ -2,8 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//var Project = require('./components/Project.jsx');
-//var ProjectList = require('./components/ProjectList.jsx');
+import Project from './components/Project.jsx';
+import ProjectList from './components/ProjectList.jsx';
 import NavItem from './components/NavItem.jsx';
 //var SocialMedia = require('./components/SocialMedia.jsx');
 import AboutMe from './components/AboutMe.jsx';
