@@ -1,12 +1,12 @@
-var React = require('react');
+import React from 'react';
 
 //Single Navigation Link
-module.exports = React.createClass({
-  render: function() {
+class NavItem extends React.Component {
+  render() {
     return (
       <li onClick={this.props.onClick}>
         <span className="nav-link">{this.props.title}</span>
       </li>
     )
   }
-});
+}

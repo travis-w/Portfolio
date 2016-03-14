@@ -1,13 +1,15 @@
 //Add Modules
-var React = require('react');
-var Project = require('./components/Project.jsx');
-var ProjectList = require('./components/ProjectList.jsx');
-var NavItem = require('./components/NavItem.jsx');
-var SocialMedia = require('./components/SocialMedia.jsx');
-var AboutMe = require('./components/AboutMe.jsx');
-var SkillPanel = require('./components/SkillPanel.jsx');
-var PastEmployment = require('./components/PastEmployment.jsx');
-var Experience = require('./components/Experience.jsx');
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+//var Project = require('./components/Project.jsx');
+//var ProjectList = require('./components/ProjectList.jsx');
+import NavItem from './components/NavItem.jsx';
+//var SocialMedia = require('./components/SocialMedia.jsx');
+import AboutMe from './components/AboutMe.jsx';
+//var SkillPanel = require('./components/SkillPanel.jsx');
+//var PastEmployment = require('./components/PastEmployment.jsx');
+import Experience from './components/Experience.jsx';
 
 //Profile Data -- Will Be stored in File eventually
 var profileData = {
