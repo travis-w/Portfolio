@@ -1,8 +1,8 @@
-var React = require('react');
+import React from 'react';
 
 //Display A Single Project
-module.exports = React.createClass({
-  render: function() {
+class Project extends React.Component {
+  render() {
     return (
       <div className="project">
         <h1>{this.props.project.title}</h1>
@@ -17,4 +17,4 @@ module.exports = React.createClass({
       </div>
     )
   }
-});
+}
