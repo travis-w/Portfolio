@@ -42,9 +42,10 @@ let profileData = {
         },
         {
           title: 'Portfolio',
-          description: 'In order to learn ReactJS and become comfortable ' +
-                       'with build tools like Webpack, I decided to ' +
-                       're-create my portfolio',
+          description: 'My personal website that I will use to ' +
+                       'showcase my past and current projects as well ' +
+                       'as listing my work experience. Currently made ' +
+                       'with ReactJS.',
           tools: ['NodeJS', 'ReactJS', 'Webpack', 'HTML', 'SASS'],
           links: [
             {
