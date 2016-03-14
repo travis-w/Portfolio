@@ -9,8 +9,8 @@ class Project extends React.Component {
         {this.props.project.description}
         <ul className="project-links">
         {
-          this.props.project.links.map(function(link) {
-            return <li><a href={link.url} key={link.title} target="_blank">{link.title}</a></li>
+          this.props.project.links.map((link) => {
+            return <li key={link.title}><a href={link.url} key={link.title} target="_blank">{link.title}</a></li>
           })
         }
         </ul>
@@ -18,3 +18,5 @@ class Project extends React.Component {
     )
   }
 }
+
+export default Project;

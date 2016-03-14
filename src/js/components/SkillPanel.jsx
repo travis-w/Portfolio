@@ -15,3 +15,5 @@ class SkillPanel extends React.Component {
     )
   }
 }
+
+export default SkillPanel;

@@ -7,7 +7,7 @@ class ProjectList extends React.Component {
     return (
       <div className="project-list">
       {
-        this.props.projects.map(function(project) {
+        this.props.projects.map((project) => {
           return <Project key={project.title} project={project} />
         })
       }
@@ -15,3 +15,5 @@ class ProjectList extends React.Component {
     )
   }
 }
+
+export default ProjectList;

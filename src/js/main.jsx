@@ -1,4 +1,5 @@
-//Add Modules
+import '../scss/main.scss';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -12,7 +13,7 @@ import PastEmployment from './components/PastEmployment.jsx';
 import Experience from './components/Experience.jsx';
 
 //Profile Data -- Will Be stored in File eventually
-var profileData = {
+let profileData = {
   name: 'Travis Weidenbenner',
   pages: [
     {
@@ -192,8 +193,9 @@ var profileData = {
 
 //Main Component
 class Portfolio extends React.Component {
-  getInitialState() {
-    return {
+  constructor() {
+    super();
+    this.state = {
       profileData: profileData,
       page: 0
     }
@@ -213,6 +215,10 @@ class Portfolio extends React.Component {
 
   render() {
     //Determine which component to render
+    let navigation = this.state.profileData.pages.map((page) => {
+      return <NavItem title={page.title} key={page.title} onClick={this.changePage.bind(this, page.id)}/>
+    });
+
     var contentPage;
     switch (this.state.page) {
       case 0:
@@ -235,12 +241,7 @@ class Portfolio extends React.Component {
       <div className="portfolio">
         <div className="logo"></div>
         <ul className="navigation">
-          {
-            //Loop through pages and create a nav link for each
-            this.state.profileData.pages.map(function(page) {
-              return <NavItem title={page.title} key={page.title} onClick={this.changePage.bind(this, page.id)}/>
-            }, this)
-          }
+          {navigation}
         </ul>
         {contentPage}
       </div>

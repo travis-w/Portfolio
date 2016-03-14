@@ -20,3 +20,5 @@ class SocialMedia extends React.Component {
     )
   }
 }
+
+export default SocialMedia;

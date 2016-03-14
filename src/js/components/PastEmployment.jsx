@@ -23,3 +23,5 @@ class PastEmployment extends React.Component {
     )
   }
 }
+
+export default PastEmployment;
