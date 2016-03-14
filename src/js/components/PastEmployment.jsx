@@ -1,25 +1,25 @@
-var React = require('react');
+import React from 'react';
 
-module.exports = React.createClass({
-    render: function() {
-      return (
-        <div className="project">
-          <h1>Employment</h1>
-          {
-            this.props.employment.map(function(job) {
-              return (
-                <div className="employment" key={job.employer}>
-                  <h2>
-                    {job.employer} <small>{job.title}</small>
-                    <span className="employment-date">{job.startDate} - {job.endDate}</span>
-                  </h2>
+class PastEmployment extends React.Component {
+  render() {
+    return (
+      <div className="project">
+        <h1>Employment</h1>
+        {
+          this.props.employment.map(function(job) {
+            return (
+              <div className="employment" key={job.employer}>
+                <h2>
+                  {job.employer} <small>{job.title}</small>
+                  <span className="employment-date">{job.startDate} - {job.endDate}</span>
+                </h2>
 
-                  {job.description}
-                </div>
-              )
-            })
-          }
-        </div>
-      )
-    }
-});
+                {job.description}
+              </div>
+            )
+          })
+        }
+      </div>
+    )
+  }
+}

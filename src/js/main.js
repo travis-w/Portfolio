@@ -8,7 +8,7 @@ import NavItem from './components/NavItem.jsx';
 //var SocialMedia = require('./components/SocialMedia.jsx');
 import AboutMe from './components/AboutMe.jsx';
 //var SkillPanel = require('./components/SkillPanel.jsx');
-//var PastEmployment = require('./components/PastEmployment.jsx');
+import PastEmployment from './components/PastEmployment.jsx';
 import Experience from './components/Experience.jsx';
 
 //Profile Data -- Will Be stored in File eventually
