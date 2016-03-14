@@ -7,7 +7,7 @@ import ProjectList from './components/ProjectList.jsx';
 import NavItem from './components/NavItem.jsx';
 import SocialMedia from './components/SocialMedia.jsx';
 import AboutMe from './components/AboutMe.jsx';
-//var SkillPanel = require('./components/SkillPanel.jsx');
+import SkillPanel from './components/SkillPanel.jsx';
 import PastEmployment from './components/PastEmployment.jsx';
 import Experience from './components/Experience.jsx';
 

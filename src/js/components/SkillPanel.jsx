@@ -1,8 +1,8 @@
-var React = require('react');
+import React from 'react';
 
 //Skills Component
-module.exports = React.createClass({
-  render: function() {
+class SkillPanel extends React.Component {
+  render() {
     return (
       <div className="project">
         <h1>{this.props.title}</h1>
@@ -14,4 +14,4 @@ module.exports = React.createClass({
       </div>
     )
   }
-});
+}
