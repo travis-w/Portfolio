@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react';
 
-module.exports = React.createClass({
-  render: function() {
+class AboutMe extends React.Component {
+  render() {
     return (
       <div className="project-list">
         <div className="project">
@@ -11,4 +11,6 @@ module.exports = React.createClass({
       </div>
     )
   }
-});
+}
+
+export default AboutMe;

@@ -1,16 +1,19 @@
-//Add Modules
-var React = require('react');
-var Project = require('./components/Project.jsx');
-var ProjectList = require('./components/ProjectList.jsx');
-var NavItem = require('./components/NavItem.jsx');
-var SocialMedia = require('./components/SocialMedia.jsx');
-var AboutMe = require('./components/AboutMe.jsx');
-var SkillPanel = require('./components/SkillPanel.jsx');
-var PastEmployment = require('./components/PastEmployment.jsx');
-var Experience = require('./components/Experience.jsx');
+import '../scss/main.scss';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Project from './components/Project.jsx';
+import ProjectList from './components/ProjectList.jsx';
+import NavItem from './components/NavItem.jsx';
+import SocialMedia from './components/SocialMedia.jsx';
+import AboutMe from './components/AboutMe.jsx';
+import SkillPanel from './components/SkillPanel.jsx';
+import PastEmployment from './components/PastEmployment.jsx';
+import Experience from './components/Experience.jsx';
 
 //Profile Data -- Will Be stored in File eventually
-var profileData = {
+let profileData = {
   name: 'Travis Weidenbenner',
   pages: [
     {
@@ -40,10 +43,9 @@ var profileData = {
         {
           title: 'Portfolio',
           description: 'In order to learn ReactJS and become comfortable ' +
-                       'with build tools like Gulp and Browserify, I ' +
-                       'decided to re-create my portfolio and move away ' +
-                       'from WordPress.',
-          tools: ['NodeJS', 'ReactJS', 'Browserify', 'Gulp', 'HTML', 'SASS'],
+                       'with build tools like Webpack, I decided to ' +
+                       're-create my portfolio',
+          tools: ['NodeJS', 'ReactJS', 'Webpack', 'HTML', 'SASS'],
           links: [
             {
               title: 'Link',
@@ -189,15 +191,16 @@ var profileData = {
 };
 
 //Main Component
-var Portfolio = React.createClass({
-  getInitialState: function() {
-    return {
+class Portfolio extends React.Component {
+  constructor() {
+    super();
+    this.state = {
       profileData: profileData,
       page: 0
     }
-  },
+  }
 
-  changePage: function(pageId) {
+  changePage(pageId) {
     //Set pageId to zero if same as current page id (to hide current page)
     if (pageId === this.state.page) {
       pageId = 0;
@@ -207,10 +210,14 @@ var Portfolio = React.createClass({
       profileData: profileData,
       page: pageId
     });
-  },
+  }
 
-  render: function() {
+  render() {
     //Determine which component to render
+    let navigation = this.state.profileData.pages.map((page) => {
+      return <NavItem title={page.title} key={page.title} onClick={this.changePage.bind(this, page.id)}/>
+    });
+
     var contentPage;
     switch (this.state.page) {
       case 0:
@@ -233,18 +240,13 @@ var Portfolio = React.createClass({
       <div className="portfolio">
         <div className="logo"></div>
         <ul className="navigation">
-          {
-            //Loop through pages and create a nav link for each
-            this.state.profileData.pages.map(function(page) {
-              return <NavItem title={page.title} key={page.title} onClick={this.changePage.bind(this, page.id)}/>
-            }, this)
-          }
+          {navigation}
         </ul>
         {contentPage}
       </div>
     )
   }
-});
+}
 
 //Render portfolio
-React.render(<Portfolio />, document.getElementById('container'));
+ReactDOM.render(<Portfolio />, document.getElementById('container'));

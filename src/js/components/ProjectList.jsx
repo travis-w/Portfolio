@@ -1,17 +1,19 @@
-var React = require('react');
-var Project = require('./Project.jsx');
+import React from 'react';
+import Project from './Project.jsx';
 
 //Display all projects
-module.exports = React.createClass({
-  render: function() {
+class ProjectList extends React.Component {
+  render() {
     return (
       <div className="project-list">
       {
-        this.props.projects.map(function(project) {
+        this.props.projects.map((project) => {
           return <Project key={project.title} project={project} />
         })
       }
       </div>
     )
   }
-});
+}
+
+export default ProjectList;
