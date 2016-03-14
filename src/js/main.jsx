@@ -191,15 +191,15 @@ var profileData = {
 };
 
 //Main Component
-var Portfolio = React.createClass({
-  getInitialState: function() {
+class Portfolio extends React.Component {
+  getInitialState() {
     return {
       profileData: profileData,
       page: 0
     }
-  },
+  }
 
-  changePage: function(pageId) {
+  changePage(pageId) {
     //Set pageId to zero if same as current page id (to hide current page)
     if (pageId === this.state.page) {
       pageId = 0;
@@ -209,9 +209,9 @@ var Portfolio = React.createClass({
       profileData: profileData,
       page: pageId
     });
-  },
+  }
 
-  render: function() {
+  render() {
     //Determine which component to render
     var contentPage;
     switch (this.state.page) {
@@ -246,7 +246,7 @@ var Portfolio = React.createClass({
       </div>
     )
   }
-});
+}
 
 //Render portfolio
-React.render(<Portfolio />, document.getElementById('container'));
+ReactDOM.render(<Portfolio />, document.getElementById('container'));
