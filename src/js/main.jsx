@@ -43,10 +43,9 @@ let profileData = {
         {
           title: 'Portfolio',
           description: 'In order to learn ReactJS and become comfortable ' +
-                       'with build tools like Gulp and Browserify, I ' +
-                       'decided to re-create my portfolio and move away ' +
-                       'from WordPress.',
-          tools: ['NodeJS', 'ReactJS', 'Browserify', 'Gulp', 'HTML', 'SASS'],
+                       'with build tools like Webpack, I decided to ' +
+                       're-create my portfolio',
+          tools: ['NodeJS', 'ReactJS', 'Webpack', 'HTML', 'SASS'],
           links: [
             {
               title: 'Link',
