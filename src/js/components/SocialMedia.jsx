@@ -1,8 +1,8 @@
-var React = require('react');
+import React from 'react';
 
 //Social Media Component
-module.exports = React.createClass({
-  render: function() {
+class SocialMedia extends React.Component {
+  render() {
     return (
       <div className="project-list">
         <div className="project">
@@ -19,4 +19,4 @@ module.exports = React.createClass({
       </div>
     )
   }
-});
+}

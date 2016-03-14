@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import Project from './components/Project.jsx';
 import ProjectList from './components/ProjectList.jsx';
 import NavItem from './components/NavItem.jsx';
-//var SocialMedia = require('./components/SocialMedia.jsx');
+import SocialMedia from './components/SocialMedia.jsx';
 import AboutMe from './components/AboutMe.jsx';
 //var SkillPanel = require('./components/SkillPanel.jsx');
 import PastEmployment from './components/PastEmployment.jsx';
