@@ -42,11 +42,12 @@ class Portfolio extends React.Component {
   render() {
     // Determine which component to render
     const navigation = this.state.profileData.pages.map((page) =>
-      (<NavItem
-        title={page.title}
-        key={page.title}
-        onClick={this.changePage.bind(this, page.id)}
-      />
+      (
+        <NavItem
+          title={page.title}
+          key={page.title}
+          onClick={this.changePage.bind(this, page.id)}
+        />
       )
     );
 
