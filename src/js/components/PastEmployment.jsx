@@ -1,27 +1,26 @@
 import React from 'react';
 
-class PastEmployment extends React.Component {
-  render() {
-    return (
-      <div className="project">
-        <h1>Employment</h1>
-        {
-          this.props.employment.map(function(job) {
-            return (
-              <div className="employment" key={job.employer}>
-                <h2>
-                  {job.employer} <small>{job.title}</small>
-                  <span className="employment-date">{job.startDate} - {job.endDate}</span>
-                </h2>
+const PastEmployment = ({ employment }) => (
+  <div className="project">
+    <h1>Employment</h1>
+    {
+      employment.map((job) => (
+        <div className="employment" key={job.employer}>
+          <h2>
+            {job.employer} <small>{job.title}</small>
+            <span className="employment-date">{job.startDate} - {job.endDate}</span>
+          </h2>
 
-                {job.description}
-              </div>
-            )
-          })
-        }
-      </div>
-    )
-  }
-}
+          {job.description}
+        </div>
+      ))
+    }
+  </div>
+);
+
+// Past Employment PropTypes
+PastEmployment.propTypes = {
+  employment: React.PropTypes.array,
+};
 
 export default PastEmployment;
