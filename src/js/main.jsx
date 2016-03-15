@@ -6,51 +6,52 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Import Components
-import Project from './components/Project.jsx';
 import ProjectList from './components/ProjectList.jsx';
 import NavItem from './components/NavItem.jsx';
 import SocialMedia from './components/SocialMedia.jsx';
 import AboutMe from './components/AboutMe.jsx';
-import SkillPanel from './components/SkillPanel.jsx';
-import PastEmployment from './components/PastEmployment.jsx';
 import Experience from './components/Experience.jsx';
 
 // Load profile data
 import profileData from './data.json';
 
-//Main Component
+// Main Component
 class Portfolio extends React.Component {
   constructor() {
     super();
     this.state = {
-      profileData: profileData,
-      page: 0
-    }
+      profileData,
+      page: 0,
+    };
   }
 
   changePage(pageId) {
-    //Set pageId to zero if same as current page id (to hide current page)
-    if (pageId === this.state.page) {
-      pageId = 0;
+    let nextPage = pageId;
+
+    // Set pageId to zero if same as current page id (to hide current page)
+    if (nextPage === this.state.page) {
+      nextPage = 0;
     }
 
     this.setState({
-      profileData: profileData,
-      page: pageId
+      profileData,
+      page: nextPage,
     });
   }
 
   render() {
-    //Determine which component to render
-    let navigation = this.state.profileData.pages.map((page) => {
-      return <NavItem title={page.title} key={page.title} onClick={this.changePage.bind(this, page.id)}/>
-    });
+    // Determine which component to render
+    const navigation = this.state.profileData.pages.map((page) =>
+      (<NavItem
+        title={page.title}
+        key={page.title}
+        onClick={this.changePage.bind(this, page.id)}
+      />
+      )
+    );
 
-    var contentPage;
+    let contentPage;
     switch (this.state.page) {
-      case 0:
-        contentPage = '';
-        break;
       case 1:
         contentPage = <ProjectList projects={this.state.profileData.pages[0].projects} />;
         break;
@@ -63,18 +64,22 @@ class Portfolio extends React.Component {
       case 4:
         contentPage = <AboutMe page={this.state.profileData.pages[3]} />;
         break;
+      default:
+        contentPage = '';
+        break;
     }
-    return (
+
+    return (
       <div className="portfolio">
         <div className="logo"></div>
         <ul className="navigation">
-          {navigation}
-        </ul>
+          {navigation}
+        </ul>
         {contentPage}
       </div>
-    )
-  }
+    );
+  }
 }
 
-//Render portfolio
+// Render portfolio
 ReactDOM.render(<Portfolio />, document.getElementById('container'));

@@ -2,7 +2,7 @@ import React from 'react';
 import SkillPanel from './SkillPanel.jsx';
 import PastEmployment from './PastEmployment.jsx';
 
-//Experience page
+// Experience page
 class Experience extends React.Component {
   render() {
     return (
@@ -11,7 +11,7 @@ class Experience extends React.Component {
         <SkillPanel title="Libraries/Frameworks" skillList={this.props.page.frameworks} />
         <PastEmployment employment={this.props.page.jobs} />
       </div>
-    )
+    );
   }
 }
 

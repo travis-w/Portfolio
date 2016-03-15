@@ -9,7 +9,7 @@ class AboutMe extends React.Component {
           {this.props.page.aboutMe}
         </div>
       </div>
-    )
+    );
   }
 }
 
