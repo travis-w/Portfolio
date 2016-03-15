@@ -3,16 +3,16 @@ import SkillPanel from './SkillPanel.jsx';
 import PastEmployment from './PastEmployment.jsx';
 
 // Experience page
-class Experience extends React.Component {
-  render() {
-    return (
-      <div className="project-list">
-        <SkillPanel title="Programming Languages" skillList={this.props.page.languages} />
-        <SkillPanel title="Libraries/Frameworks" skillList={this.props.page.frameworks} />
-        <PastEmployment employment={this.props.page.jobs} />
-      </div>
-    );
-  }
-}
+const Experience = ({ page }) => (
+  <div className="project-list">
+    <SkillPanel title="Programming Languages" skillList={page.languages} />
+    <SkillPanel title="Libraries/Frameworks" skillList={page.frameworks} />
+    <PastEmployment employment={page.jobs} />
+  </div>
+);
+
+Experience.propTypes = {
+  page: React.PropTypes.object.isRequired,
+};
 
 export default Experience;
