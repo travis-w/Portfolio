@@ -19,13 +19,16 @@ import profileData from './data.json';
 class Portfolio extends React.Component {
   constructor() {
     super();
+
     this.state = {
       profileData,
       page: 0,
     };
+
+    this._changePage = this._changePage.bind(this);
   }
 
-  changePage(pageId) {
+  _changePage(pageId) {
     let nextPage = pageId;
 
     // Set pageId to zero if same as current page id (to hide current page)
@@ -45,7 +48,8 @@ class Portfolio extends React.Component {
       <NavItem
         title={page.title}
         key={page.title}
-        onClick={this.changePage.bind(this, page.id)}
+        onClick={this._changePage}
+        pageId={page.id}
       />
     ));
 
