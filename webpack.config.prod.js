@@ -50,6 +50,10 @@ module.exports = {
         query: {
           pretty: true
         }
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   },
