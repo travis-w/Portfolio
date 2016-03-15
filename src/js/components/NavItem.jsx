@@ -1,14 +1,16 @@
 import React from 'react';
 
 // Single Navigation Link
-class NavItem extends React.Component {
-  render() {
-    return (
-      <li onClick={this.props.onClick}>
-        <span className="nav-link">{this.props.title}</span>
-      </li>
-    );
-  }
-}
+const NavItem = ({ title, onClick }) => (
+  <li onClick={onClick}>
+    <span className="nav-link">{title}</span>
+  </li>
+);
+
+// Prop Types for NavItem
+NavItem.propTypes = {
+  title: React.PropTypes.string.isRequired,
+  onClick: React.PropTypes.func.isRequired,
+};
 
 export default NavItem;
