@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
   entry: './src/js/main.jsx',
@@ -14,6 +15,7 @@ module.exports = {
       favicon: 'src/img/favicon.ico',
       template: 'src/templates/index.jade',
     }),
+    new OpenBrowserPlugin(),
   ],
   module: {
     loaders: [
