@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --config webpack.config.prod.js",
-    "dev": "./node_modules/.bin/webpack --config webpack.config.dev.js"
+    "dev": "./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js --content-base build/ --progress --colors --inline --hot"
   },
   "author": "Travis Weidenbenner",
   "license": "ISC",
