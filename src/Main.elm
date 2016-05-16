@@ -4,22 +4,33 @@ import Html.App as Html
 import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 
+import Components.Navigation as Navigation exposing (..)
+
 
 main =
-  Html.beginnerProgram { model = 0, view = view, update = update }
+  Html.beginnerProgram { model = "Test", view = view, update = update }
 
-type Msg = Increment | Decrement
+type Action
+  = SwitchPage Int
+  | HidePage Int
 
+update : Action -> String -> String
 update msg model =
-  0
+  case msg of
+    SwitchPage value ->
+      "About"
+    HidePage value ->
+      "Tewsting"
 
+view : String -> Html Action
 view model =
   div [ class "portfolio" ]
     [ div [ class "logo" ] []
     , ul [ class "navigation" ]
-      [ li [] [ span [ class "nav-link" ] [ text "Projects" ] ]
-      , li [] [ span [ class "nav-link" ] [ text "Experience" ] ]
-      , li [] [ span [ class "nav-link" ] [ text "Social Media" ] ]
-      , li [] [ span [ class "nav-link" ] [ text "About" ] ]
+      [ li [] [ span [ class "nav-link", ( onClick (SwitchPage 1) ) ] [text "Projects" ] ]
+      , Navigation.item "Experience"
+      , Navigation.item "Social Media"
+      , Navigation.item "About"
       ]
+    , div [] [text model]
     ]
