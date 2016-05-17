@@ -6,6 +6,7 @@ import Html.Attributes exposing (..)
 
 import Components.Navigation as Navigation exposing (..)
 import Components.Project exposing (..)
+import Components.Experience exposing (..)
 
 
 main =
@@ -42,6 +43,20 @@ pList = { title = "Projects"
         , projects = [test, test2]
         }
 
+experience : ExperiencePage
+experience = { title = "Experience"
+             , languages = ["HTML", "CSS", "JavaScript", "SQL", "PHP", "C++", "ASP.NET", "C#", "Python"]
+             , frameworks = ["Bootstrap", "ReactJS", "AngularJS", "NodeJS", "Knockout", "ExpressJS", "jQuery"]
+             , jobs = [
+                 { employer = "Nucor-Yamato Steel"
+                 , title = "Systems Analyst Intern"
+                 , startDate = "May 2014"
+                 , endDate = "January 2015"
+                 , description = "Created and maintained several C#/ASP.NET applications used by metallurgists and lab technicians."
+                 }
+               ]
+             }
+
 view : String -> Html Action
 view model =
   div [ class "portfolio" ]
@@ -52,5 +67,5 @@ view model =
       , Navigation.item "Social Media"
       , Navigation.item "About"
       ]
-    , (renderPage pList)
+    , (renderExperience experience)
     ]
