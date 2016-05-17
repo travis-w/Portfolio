@@ -5,6 +5,7 @@ import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 
 import Components.Navigation as Navigation exposing (..)
+import Components.Project exposing (..)
 
 
 main =
@@ -20,7 +21,26 @@ update msg model =
     SwitchPage value ->
       "About"
     HidePage value ->
-      "Tewsting"
+      "Testing"
+
+test : Project
+test = { title = "TESTING"
+       , description = "Test test"
+       , tools = ["Elm", "Test"]
+       , links = [{ title = "Link", url = "http://thetravisw.com" }]
+       }
+
+test2 : Project
+test2 = { title = "TESTING"
+       , description = "Test test"
+       , tools = ["Elm", "Test"]
+       , links = [{ title = "Link", url = "http://thetravisw.com" }]
+       }
+
+pList : ProjectPage
+pList = { title = "Projects"
+        , projects = [test, test2]
+        }
 
 view : String -> Html Action
 view model =
@@ -32,5 +52,5 @@ view model =
       , Navigation.item "Social Media"
       , Navigation.item "About"
       ]
-    , div [] [text model]
+    , (renderPage pList)
     ]
