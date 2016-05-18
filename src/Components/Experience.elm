@@ -14,13 +14,6 @@ type alias Job =
   , description : String
   }
 
-type alias ExperiencePage =
-  { title : String
-  , languages : List String
-  , frameworks : List String
-  , jobs : List Job
-  }
-
 renderJob : Job -> VirtualDom.Node msg
 renderJob j =
   div [ class "employment" ]
@@ -36,16 +29,23 @@ renderSkill : String -> VirtualDom.Node msg
 renderSkill s =
   (node "span" [ class "skill" ] [ text s ])
 
-renderSkills : (List String) -> String -> Html msg
+renderSkills : (Maybe (List String)) -> String -> Html msg
 renderSkills l title =
-  div [ class "project" ]
-  (List.append ([ h1 [] [ text title ]]) ( List.map renderSkill l ))
+  case l of
+    Nothing ->
+      (text "")
 
-renderExperience : ExperiencePage -> Html msg
-renderExperience p =
+    Just skills ->
+      div [ class "project" ]
+      (List.append ([ h1 [] [ text title ]]) ( List.map renderSkill skills ))
+
+{-
+renderExperiencePage : ExperiencePage -> Html msg
+renderExperiencePage p =
   div [ class "project-list" ]
   [ renderSkills p.languages "Programming Languages"
   , renderSkills p.frameworks "Libraries/Frameworks"
   , div [ class "project" ]
     (List.append [ h1 [] [ text "Employment" ] ] (List.map renderJob p.jobs))
   ]
+-}

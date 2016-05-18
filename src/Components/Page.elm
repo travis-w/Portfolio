@@ -5,19 +5,9 @@ import Html exposing (..)
 import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 
-type alias Link =
-  { title : String
-  , url : String
-  , glyphicon : Maybe String
-  }
-
-type alias Job =
-  { employer : String
-  , title : String
-  , startDate : String
-  , endDate : String
-  , description : String
-}
+import Components.Project exposing (..)
+import Components.Experience exposing (..)
+import Components.Link exposing (..)
 
 type alias Page =
   { title : String
@@ -29,22 +19,27 @@ type alias Page =
   , aboutMe : Maybe String
   }
 
-project : Project -> Html msg
-project p =
-  div [ class "project" ]
-  [ h1 [] [ text p.title ]
-  , text p.description
-  , ul [ class "project-links" ]
-    (List.map (\r -> li [] [ a [href r.url] [text r.title]]) p.links)
-  ]
+projects : (Maybe (List Project)) -> (List (Html msg))
+projects list =
+  case list of
+    Nothing ->
+      [text ""]
 
-aboutPage : Page
-aboutPage =
-  { title = "Test"
-  , projects = Nothing
-  , languages = Nothing
-  , frameworks = Nothing
-  , jobs = Nothing
-  , links = Nothing
-  , aboutMe = Just "Testing"
-  }
+    Just projects ->
+      (List.map renderProject projects)
+
+
+render : (Maybe Page) -> Html msg
+render page =
+  case page of
+    Nothing ->
+      div [] []
+
+    Just p ->
+      div [ class "project-list" ]
+      ( List.concat
+        [ (projects p.projects)
+        , [renderSkills p.languages "Programming Languages"]
+        , [renderSkills p.frameworks "Libraries/Frameworks"]
+        ]
+      )
