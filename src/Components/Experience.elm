@@ -25,6 +25,16 @@ renderJob j =
   , text j.description
   ]
 
+renderJobPanel : (Maybe (List Job)) -> Html msg
+renderJobPanel jobs =
+  case jobs of
+    Nothing ->
+      (text "")
+
+    Just j ->
+      div [ class "project" ]
+      (List.append [ h1 [] [ text "Employment" ] ] (List.map renderJob j))
+
 renderSkill : String -> VirtualDom.Node msg
 renderSkill s =
   (node "span" [ class "skill" ] [ text s ])

@@ -41,5 +41,6 @@ render page =
         [ (projects p.projects)
         , [renderSkills p.languages "Programming Languages"]
         , [renderSkills p.frameworks "Libraries/Frameworks"]
+        , [renderJobPanel p.jobs]
         ]
       )
