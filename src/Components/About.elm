@@ -6,6 +6,7 @@ import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 
 import Components.Link exposing (..)
+import Components.Panel exposing (..)
 
 renderAboutPanel : (Maybe String) -> Html msg
 renderAboutPanel about =
@@ -14,7 +15,4 @@ renderAboutPanel about =
       (text "")
 
     Just aboutMe ->
-      div [ class "project" ]
-      [ h1 [] [ text "About" ]
-      , text aboutMe
-      ]
+      panel "About" [ text aboutMe ]

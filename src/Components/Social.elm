@@ -6,6 +6,7 @@ import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 
 import Components.Link exposing (..)
+import Components.Panel exposing (..)
 
 renderSocialPanel : (Maybe (List Link)) -> Html msg
 renderSocialPanel list =
@@ -14,8 +15,7 @@ renderSocialPanel list =
       (text "")
 
     Just links ->
-      div [ class "project" ]
-      [ h1 [] [ text "Social Media" ]
-      , div [ class "social-media" ]
+      panel "Social Media"
+      [ div [ class "social-media" ]
         (List.map renderLink links)
       ]

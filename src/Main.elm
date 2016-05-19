@@ -7,6 +7,7 @@ import Array exposing (..)
 
 import Components.Navigation as Navigation exposing (..)
 import Components.Page exposing (..)
+import Components.Panel exposing (..)
 
 -- Import Data
 import Components.Data exposing (..)

@@ -6,6 +6,8 @@ import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 import VirtualDom exposing (Node)
 
+import Components.Panel exposing(..)
+
 type alias Job =
   { employer : String
   , title : String
@@ -32,8 +34,7 @@ renderJobPanel jobs =
       (text "")
 
     Just j ->
-      div [ class "project" ]
-      (List.append [ h1 [] [ text "Employment" ] ] (List.map renderJob j))
+      panel "Employment" (List.map renderJob j)
 
 renderSkill : String -> VirtualDom.Node msg
 renderSkill s =
@@ -46,16 +47,4 @@ renderSkills l title =
       (text "")
 
     Just skills ->
-      div [ class "project" ]
-      (List.append ([ h1 [] [ text title ]]) ( List.map renderSkill skills ))
-
-{-
-renderExperiencePage : ExperiencePage -> Html msg
-renderExperiencePage p =
-  div [ class "project-list" ]
-  [ renderSkills p.languages "Programming Languages"
-  , renderSkills p.frameworks "Libraries/Frameworks"
-  , div [ class "project" ]
-    (List.append [ h1 [] [ text "Employment" ] ] (List.map renderJob p.jobs))
-  ]
--}
+      panel title  ( List.map renderSkill skills )
