@@ -6,8 +6,6 @@ import Html.Attributes exposing (..)
 import Array exposing (..)
 
 import Components.Navigation as Navigation exposing (..)
-import Components.Project exposing (..)
-import Components.Experience exposing (..)
 import Components.Page exposing (..)
 
 -- Import Data
@@ -21,7 +19,7 @@ type alias Model =
 
 initModel : Model
 initModel =
-  { pages = fromList [pageProjects, pageExperience]
+  { pages = fromList [pageProjects, pageExperience, pageSocial, pageAbout]
   , activePage = -1
   }
 

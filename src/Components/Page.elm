@@ -8,6 +8,8 @@ import Html.Attributes exposing (..)
 import Components.Project exposing (..)
 import Components.Experience exposing (..)
 import Components.Link exposing (..)
+import Components.Social exposing (..)
+import Components.About exposing (..)
 
 type alias Page =
   { title : String
@@ -38,9 +40,11 @@ render page =
     Just p ->
       div [ class "project-list" ]
       ( List.concat
-        [ (projects p.projects)
-        , [renderSkills p.languages "Programming Languages"]
-        , [renderSkills p.frameworks "Libraries/Frameworks"]
-        , [renderJobPanel p.jobs]
+        [ ( projects p.projects )
+        , [ renderSkills p.languages "Programming Languages" ]
+        , [ renderSkills p.frameworks "Libraries/Frameworks" ]
+        , [ renderJobPanel p.jobs ]
+        , [ renderSocialPanel p.links ]
+        , [ renderAboutPanel p.aboutMe ]
         ]
       )

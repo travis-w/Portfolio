@@ -99,6 +99,7 @@ pCampusAlly =
     ]
   }
 
+-- Project Page
 pageProjects : Page
 pageProjects =
   { title = "Projects"
@@ -110,26 +111,68 @@ pageProjects =
   , links = Nothing
   }
 
+-- Experience Page
 pageExperience : Page
 pageExperience =
   { title = "Experience"
   , languages = Just ["HTML", "CSS", "JavaScript", "SQL", "PHP", "C++", "ASP.NET", "C#", "Python"]
   , frameworks = Just ["Bootstrap", "ReactJS", "AngularJS", "NodeJS", "Knockout", "ExpressJS", "jQuery"]
   , jobs = Just
-  [ { employer = "Commerce Bank"
-    , title = "Information Technology Intern"
-    , startDate = "May 2016"
-    , endDate = ""
-    , description = "Information Technology intern for Commerce Bank in Kansas City."
-    }
-  , { employer = "Nucor-Yamato Steel"
-    , title = "Systems Analyst Intern"
-    , startDate = "May 2014"
-    , endDate = "January 2015"
-    , description = "Created and maintained several C#/ASP.NET applications used by metallurgists and lab technicians."
-    }
-  ]
+    [ { employer = "Commerce Bank"
+      , title = "Information Technology Intern"
+      , startDate = "May 2016"
+      , endDate = ""
+      , description = "Information Technology intern for Commerce Bank in Kansas City."
+      }
+    , { employer = "Nucor-Yamato Steel"
+      , title = "Systems Analyst Intern"
+      , startDate = "May 2014"
+      , endDate = "January 2015"
+      , description = "Created and maintained several C#/ASP.NET applications used by metallurgists and lab technicians."
+      }
+    ]
   , projects = Nothing
   , aboutMe = Nothing
+  , links = Nothing
+  }
+
+-- Social Media Page
+pageSocial : Page
+pageSocial =
+  { title = "Social Media"
+  , projects = Nothing
+  , languages = Nothing
+  , frameworks = Nothing
+  , jobs = Nothing
+  , aboutMe = Nothing
+  , links = Just
+    [ { title = "Twitter"
+      , url = "http://twitter.com/tweidenbenner"
+      , glyphicon = Just "social-twitter"
+      }
+    , { title = "GitHub"
+      , url = "http://github.com/travis-w"
+      , glyphicon = Just "social-github"
+      }
+    , { title = "Facebook"
+      , url = "https://www.facebook.com/travis.weidenbenner"
+      , glyphicon = Just "social-facebook"
+      }
+    , { title = "Email"
+      , url = "mailto:travis@thetravisw.com"
+      , glyphicon = Just "social-e-mail"
+      }
+    ]
+  }
+
+-- About Me Page
+pageAbout : Page
+pageAbout =
+  { title = "About"
+  , projects = Nothing
+  , languages = Nothing
+  , frameworks = Nothing
+  , jobs = Nothing
+  , aboutMe = Just "I am a student at Missouri University of Science and Technology studying computer science.  In my spare time I like to work on various projects and learning new concepts. Outside of programming, I enjoy playing and watching sports, playing video games, and hanging out with friends and family."
   , links = Nothing
   }
