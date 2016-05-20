@@ -1,4 +1,4 @@
-## Travis Weidenbenner Portfolio
+## Travis Weidenbenner Portfolio [React]
 [Link to Portfolio](http://thetravisw.com)
 
 My personal portfolio to display all of my projects and list previous employment
