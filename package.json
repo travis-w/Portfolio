@@ -4,7 +4,8 @@
   "description": "Travis Weidenbenner Portfolio in Elm",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack --config webpack.config.dev.js --progress"
+    "dev": "./node_modules/.bin/webpack --config webpack.config.dev.js --progress",
+    "build": "./node_modules/.bin/webpack --config webpack.config.prod.js --progress"
   },
   "repository": {
     "type": "git",
