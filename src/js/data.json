@@ -75,6 +75,12 @@
       "languages": ["HTML", "CSS", "JavaScript", "SQL", "PHP", "C++", "ASP.NET", "C#", "Python"],
       "frameworks": ["Bootstrap", "ReactJS", "AngularJS", "NodeJS", "Knockout", "ExpressJS", "jQuery"],
       "jobs": [{
+          "employer": "Commerce Bank",
+          "title": "IT Developer Intern",
+          "startDate": "May 2016",
+          "endDate": "",
+          "description": "Work with team on NodeJS application."
+        }, {
           "employer": "Nucor-Yamato Steel",
           "title": "Systems Analyst Intern",
           "startDate": "May 2014",
