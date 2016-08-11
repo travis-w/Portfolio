@@ -1,14 +1,9 @@
-## Travis Weidenbenner Portfolio [React]
+## Travis Weidenbenner Portfolio [Vue]
 [Link to Portfolio](http://thetravisw.com)
 
-My personal portfolio to display all of my projects and list previous employment
-information.
-
-##### Style
-Code adheres to the [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
+My personal portfolio to display all of my projects and list previous employment information.
 
 ##### Build
-* npm run dev - Development build (JS not minified)
 * npm run build - Production build (JS minified)
 
 ##### Implementations
@@ -18,3 +13,4 @@ So far I have completed the following.
 
 * [React](https://github.com/travis-w/Portfolio/tree/master)
 * [Elm](https://github.com/travis-w/Portfolio/tree/elm-lang)
+* [Vue](https://github.com/travis-w/Portfolio/tree/vue-js)
