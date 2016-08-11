@@ -1,8 +1,7 @@
 {
-  "name": "test",
-  "description": "A Vue.js project",
-  "author": "Travis Weidenbenner <tjw8d3@mst.edu>",
-  "private": true,
+  "name": "portfolio-vue",
+  "description": "Travis Weidenbenner Portfolio in Vue",
+  "author": "Travis Weidenbenner",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
