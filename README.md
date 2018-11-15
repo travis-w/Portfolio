@@ -7,8 +7,8 @@ My personal portfolio to display all of my projects and list previous employment
 * npm run build - Production build (JS minified)
 
 ##### Implementations
-In order to expand my knowledge and learn new frameworks/languages, I will be
-attempting to implement my portfolio in many different frameworks/languages.
+In order to expand my knowledge and learn new frameworks, I will be
+attempting to implement my portfolio in many different frameworks.
 So far I have completed the following.
 
 * [React](https://github.com/travis-w/Portfolio/tree/master)
