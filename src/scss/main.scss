@@ -44,9 +44,13 @@ body, html {
 //Portfolio logo
 .logo {
   margin: 10px auto 5px auto;
-	background-image: url('../img/logo.png');
-	width: 450px;
-	height: 50px;
+  background-image: url('../img/logo.png');
+  max-width: 450px;
+  height: 50px;
+  width: 100%;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 //Project Panels
