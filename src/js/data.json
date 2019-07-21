@@ -99,12 +99,8 @@
           "url": "http://github.com/travis-w",
           "glyphicon": "social-github"
         }, {
-          "title": "Facebook",
-          "url": "https://www.facebook.com/travis.weidenbenner",
-          "glyphicon": "social-facebook"
-        }, {
           "title": "Email",
-          "url": "mailto:travis@thetravisw.com",
+          "url": "mailto:travis@travisw.dev",
           "glyphicon": "social-e-mail"
       }]
     }, {
