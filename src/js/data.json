@@ -91,10 +91,6 @@
       "id": 3,
       "title": "Social Media",
       "links": [{
-          "title": "Twitter",
-          "url": "http://twitter.com/tweidenbenner",
-          "glyphicon": "social-twitter"
-        }, {
           "title": "GitHub",
           "url": "http://github.com/travis-w",
           "glyphicon": "social-github"
