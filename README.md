@@ -1,20 +1,24 @@
-## Travis Weidenbenner Portfolio [React]
-[Link to Portfolio](http://thetravisw.com)
+# portfolio
 
-My personal portfolio to display all of my projects and list previous employment
-information.
+## Project setup
+```
+npm install
+```
 
-##### Style
-Code adheres to the [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-##### Build
-* npm run dev - Development build (JS not minified)
-* npm run build - Production build (JS minified)
+### Compiles and minifies for production
+```
+npm run build
+```
 
-##### Implementations
-In order to expand my knowledge and learn new frameworks/languages, I will be
-attempting to implement my portfolio in many different frameworks/languages.
-So far I have completed the following.
+### Lints and fixes files
+```
+npm run lint
+```
 
-* [React](https://github.com/travis-w/Portfolio/tree/master)
-* [Elm](https://github.com/travis-w/Portfolio/tree/elm-lang)
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
