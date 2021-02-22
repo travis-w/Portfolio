@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "Portfolio for Travis Weidenbenner",
+  "main": "index.js",
+  "authors": {
+    "name": "Travis Weidenbenner",
+    "email": "travis@weidenbenner.com"
+  },
+  "repository": "https://github.com/travis-w/portfolio/portfolio",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-blog": "^1.9.4",
+    "vuepress": "^1.5.3"
+  }
+}
