@@ -1,5 +1,7 @@
 # portfolio
 
+Site deployed at 2021.travisw.dev for now
+
 ## Project setup
 ```
 npm install
