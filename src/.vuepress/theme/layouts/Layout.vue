@@ -1,8 +1,6 @@
 <template>
   <div class="theme-container">
-    FUCK THIS
     <Home />
-    test
     <Content/>
     {{ this.$page }}
     <hr />
