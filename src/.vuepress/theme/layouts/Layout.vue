@@ -1,10 +1,7 @@
 <template>
   <div class="theme-container">
-    <Home />
+    <Home v-if="$page.title === 'Home'" />
     <Content/>
-    {{ this.$page }}
-    <hr />
-    {{ this.$site }}
   </div>
 </template>
 

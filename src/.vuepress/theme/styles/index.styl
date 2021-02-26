@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;500&display=swap')
+
+html, body
+  background-color: $bgColor
+  color: $txtColor
+  font-family: "Open Sans", sans-serif
+  height: 100%
+
+body
+  display: flex
+  align-items: center
+  justify-content: center
+
+#app
+  max-width: 800px
+  margin: -100px auto 0
+
+.page-title
+  font-size: 45px
+  font-family: "Roboto", sans-serif
+  font-weight: 600
+  margin: 0
+
+.social-links
+  a + a
+    margin-left: 10px
+    
+  .social-icon
+    height: 24px
+    fill: $txtColor
+    vertical-align: middle
+    
+    &:hover
+      fill: red

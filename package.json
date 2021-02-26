@@ -9,7 +9,7 @@
   },
   "repository": "https://github.com/travis-w/portfolio/portfolio",
   "scripts": {
-    "dev": "vuepress dev src",
+    "serve": "vuepress dev src",
     "build": "vuepress build src --dest build"
   },
   "license": "MIT",
