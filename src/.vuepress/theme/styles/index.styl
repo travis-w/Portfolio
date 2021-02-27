@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;500&display=swap')
 
 html, body
-  background-color: $bgColor
-  color: $txtColor
   font-family: "Open Sans", sans-serif
   height: 100%
 
 body
+  background-color: $bgColor
+  color: $txtColor
   display: flex
   align-items: center
   justify-content: center
@@ -32,3 +32,13 @@ body
     
     &:hover
       fill: red
+
+/**
+ * Dark Mode Styles
+ */
+body.dark-mode
+  background-color: $darkBgColor
+  color: $darkTxtColor
+  
+  .social-icon
+    fill: $darkTxtColor

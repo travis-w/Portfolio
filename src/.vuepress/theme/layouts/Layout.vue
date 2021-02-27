@@ -1,5 +1,6 @@
 <template>
   <div class="theme-container">
+    <DarkModeSwitch />
     <Home v-if="$page.title === 'Home'" />
     <Content/>
   </div>
@@ -7,10 +8,12 @@
 
 <script>
 import Home from "../components/Home";
+import DarkModeSwitch from "../components/DarkModeSwitch";
 
 export default {
   components: {
-    Home
+    Home,
+    DarkModeSwitch
   }
 }
 </script>

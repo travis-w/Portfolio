@@ -1,13 +1,11 @@
 <template>
   <div>
-    {{ blogs }}
     <BlogListItem
       v-for="blog in blogs"
       :key="blog.key"
       :title="blog.title"
       :excerpt="blog.excerpt"
     />
-
   </div>
 </template>
 
