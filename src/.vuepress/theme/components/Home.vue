@@ -10,6 +10,7 @@
         :title="link.title"
         :href="link.link"
         target="_blank"
+        rel="noopener"
       >
         <svg
           role="img"
