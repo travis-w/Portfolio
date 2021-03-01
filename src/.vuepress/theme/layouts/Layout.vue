@@ -1,6 +1,6 @@
 <template>
   <div class="theme-container">
-    <DarkModeSwitch />
+    <Header :navLinks="navLinks" />
     <Home v-if="$page.title === 'Home'" />
     <Content/>
   </div>
@@ -8,12 +8,20 @@
 
 <script>
 import Home from "../components/Home";
-import DarkModeSwitch from "../components/DarkModeSwitch";
+import Header from "../components/Header";
 
 export default {
   components: {
     Home,
-    DarkModeSwitch
+    Header
+  },
+  computed: {
+    navLinks() {
+      return this.$site.themeConfig.navigation
+    }
+  },
+  created() {
+    console.log(this.navLinks);
   }
 }
 </script>
