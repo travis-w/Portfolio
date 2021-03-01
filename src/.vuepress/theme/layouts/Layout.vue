@@ -1,8 +1,10 @@
 <template>
   <div class="theme-container">
     <Header :navLinks="navLinks" />
-    <Home v-if="$page.title === 'Home'" />
-    <Content/>
+    <div class="content">
+      <Home v-if="$page.title === 'Home'" />
+      <Content/>
+    </div>
   </div>
 </template>
 

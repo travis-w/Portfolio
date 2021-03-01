@@ -51,7 +51,7 @@ export default {
 
 ul
   list-style: none
-  margin: 0
+  margin: 0 0 0 10px
   padding: 0
   display: inline-block
   line-height: 33px
@@ -69,7 +69,7 @@ ul
         text-decoration: underline
   
   li + li
-    margin-left: 10px
+    margin-left: 25px
 
 body.dark-mode
   a.nav-link
