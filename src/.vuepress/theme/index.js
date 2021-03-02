@@ -16,16 +16,7 @@ module.exports = (themeConfig, ctx) => {
               dirname: "_projects",
               path: "/projects/",
               itemPermalink: "/projects/:slug",
-              layout: "ProjectList",
-              pagination: {
-                sorter: (prev, next) => {
-                  // Default order to bottom if none provided
-                  const prevOrder = prev.frontmatter.order ?? 9999;
-                  const nextOrder = next.frontmatter.order ?? 9999;
-
-                  return prevOrder < nextOrder ? -1 : 1;
-                }
-              }
+              layout: "ProjectList"
             }
           ]
         }
