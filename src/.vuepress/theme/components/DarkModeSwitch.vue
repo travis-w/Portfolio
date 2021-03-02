@@ -1,5 +1,9 @@
 <template>
-  <button @click="toggleMode" class="darkModeBtn">
+  <button
+    @click="toggleMode"
+    class="darkModeBtn"
+    :title="btnTitle"
+  >
     <Sun v-if="darkMode" />
     <Moon v-else />
   </button>
@@ -10,14 +14,21 @@ import Sun from "../components/Sun";
 import Moon from "../components/Moon";
 
 export default {
+  components: {
+    Sun,
+    Moon,
+  },
   data() {
     return {
       darkMode: false,
     }
   },
-  components: {
-    Sun,
-    Moon,
+  computed: {
+    btnTitle() {
+      const action = this.darkMode ? "Disable" : "Enable";
+
+      return `${action} Dark Mode`
+    }
   },
   mounted() {
     const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches;

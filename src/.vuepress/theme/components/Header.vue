@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-    <div class="title">
-      
+    <div class="title" v-if="title">
+      {{ title }}
     </div>
     <div class="nav">
       <DarkModeSwitch />
@@ -29,6 +29,8 @@ export default {
     DarkModeSwitch
   },
   props: {
+    title: String,
+    page: String,
     navLinks: {
       type: Array,
       default: () => []
@@ -40,21 +42,22 @@ export default {
 <style lang="stylus">
 .header
   overflow: hidden
+  line-height: 33px
+  padding: 10px 0
 
 .title
   display: inline-block
+  font-size: 18px
   
 .nav
   display: inline-block
   float: right
-  padding: 10px 0
 
 ul
   list-style: none
   margin: 0 0 0 10px
   padding: 0
   display: inline-block
-  line-height: 33px
   font-size: 16px
   
   li

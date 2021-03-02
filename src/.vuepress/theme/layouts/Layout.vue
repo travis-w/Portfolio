@@ -23,7 +23,8 @@ export default {
     }
   },
   created() {
-    console.log(this.navLinks);
+    console.log(this.$site);
+    console.log(this.$page);
   }
 }
 </script>

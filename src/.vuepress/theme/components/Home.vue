@@ -6,7 +6,7 @@
     </h1>
     <div class="social-links">
       <a
-        v-for="link in $page.frontmatter.social"
+        v-for="link in $site.themeConfig.socialIcons"
         :title="link.title"
         :href="link.link"
         target="_blank"

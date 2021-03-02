@@ -1,32 +1,38 @@
 module.exports = (themeConfig, ctx) => {
-
   return {
     plugins: [
       [
-        '@vuepress/blog',
+        "@vuepress/blog",
         {
           directories: [
             {
-              // Unique ID of current classification
-              id: 'post',
-              // Target directory
-              dirname: '_posts',
-              // Path of the `entry page` (or `list page`)
-              path: '/blog/',
-              itemPermalink: '/blog/:year/:month/:day/:slug',
-              pagination: {
-                sorter: (prev, next) => {
-                  console.log(prev.frontmatter.date, next);
-                  const dayjs = require('dayjs');
-                  const prevTime = dayjs(prev.frontmatter.date);
-                  const nextTime = dayjs(next.frontmatter.date);
-                  return prevTime - nextTime > 0 ? -1 : 1;
-                }
-              }
+              id: "post",
+              dirname: "_posts",
+              path: "/blog/",
+              itemPermalink: "/blog/:year/:month/:day/:slug",
+            },
+            {
+              id: "projects",
+              dirname: "_projects",
+              path: "/projects/",
+              itemPermalink: "/projects/:slug",
+              layout: "ProjectList"
             }
           ]
         }
       ]
-    ]
+    ],
+    extendPageData(page) {
+      const { _strippedContent, _context } = page;
+
+      // Generate own summaries between <!-- summary --> <!-- /summary --> tags
+      const hasSummary = _strippedContent && _strippedContent.indexOf("<!-- /summary -->") !== -1;
+
+      if (hasSummary) {
+        const summary = _strippedContent.split('<!-- summary -->').pop().split('<!-- /summary -->')[0];
+
+        page.summary = _context.markdown.renderInline(summary);
+      }
+    }
   }
 }

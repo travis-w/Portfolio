@@ -8,12 +8,20 @@ html, body
 body
   background-color: $bgColor
   color: $txtColor
-  display: flex
-  justify-content: center
   padding: 0 15px
+
+a
+  color: $linkColor
+  text-decoration: none
+  
+  &:hover
+    text-decoration: underline
 
 #app
   height: 100%
+  width: 100%
+  display: flex
+  justify-content: center
 
 .theme-container
   max-width: 800px
@@ -21,6 +29,7 @@ body
   display: flex
   flex-flow: column
   height: 100%
+  width: 100%
   
   & > .header
     flex: 0 0 auto
@@ -67,6 +76,9 @@ body
 body.dark-mode
   background-color: $darkBgColor
   color: $darkTxtColor
+  
+  a
+    color: $darkLinkColor
   
   .social-icon
     fill: $darkTxtColor
