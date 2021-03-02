@@ -30,7 +30,7 @@ export default {
       return `${action} Dark Mode`
     }
   },
-  mounted() {
+  created() {
     const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     let localPref = localStorage.getItem("DarkMode")
