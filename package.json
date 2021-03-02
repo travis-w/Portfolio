@@ -10,11 +10,19 @@
   "repository": "https://github.com/travis-w/portfolio/portfolio",
   "scripts": {
     "serve": "vuepress dev src",
-    "build": "vuepress build src --dest build"
+    "build": "vuepress build src --dest build",
+    "commit": "cz"
   },
   "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-blog": "^1.9.4",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
     "vuepress": "^1.5.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
