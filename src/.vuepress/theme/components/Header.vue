@@ -4,7 +4,9 @@
       {{ title }}
     </div>
     <div class="nav">
-      <DarkModeSwitch />
+      <ClientOnly>
+        <DarkModeSwitch />
+      </ClientOnly>
       <ul>
         <li
           v-for="link in navLinks"
