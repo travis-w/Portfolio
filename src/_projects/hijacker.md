@@ -9,5 +9,5 @@ links:
 # Hijacker
 
 <!-- summary -->
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pretium vulputate tortor, imperdiet aliquam turpis egestas in. Donec nisl leo, volutpat suscipit mattis posuere, sollicitudin sit amet velit. Nulla quis ullamcorper urna, id ultricies lacus. Vivamus gravida tempus sollicitudin. Donec iaculis lobortis metus in rutrum. Pellentesque semper, nisi sed ullamcorper fermentum, metus magna blandit magna, eget luctus eros erat ut urna. Ut vulputate justo ultrices, sodaltestes leo eu, laoreet ex.
+Hijacker is a development tool I created to help mock API responses. It can be set up as a passthrough to a normal API endpoint, as well as mock new endpoints. Hijacker also has the ability to set up API "breakpoints" that allow you to edit requests from the client before they hit the API server and/or the responses from the API server before they are returned to the client. For latest development, check out the [beta](https://github.com/travis-w/hijacker/tree/beta) branch.
 <!-- /summary -->
