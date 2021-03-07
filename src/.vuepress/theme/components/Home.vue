@@ -3,6 +3,7 @@
     <h1 class="page-title">
       Travis<br />
       Weidenbenner
+      <span class="sub-title" v-if="subtitle">| {{ subtitle }}</span>
     </h1>
     <div class="social-links">
       <a
@@ -32,6 +33,9 @@
 
 <script>
 export default {
+  props: {
+    subtitle: String
+  },
   methods: {
     mouseEnter(e, hoverColor) {
       e.target.style.fill = `#${hoverColor}`;

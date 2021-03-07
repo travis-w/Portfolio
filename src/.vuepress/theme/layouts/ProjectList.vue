@@ -4,7 +4,7 @@
       :navLinks="navLinks"
     />
     <div class="content">
-      <Home />
+      <Home subtitle="Projects" />
       <div class="project-list">
         <div
           v-for="project in projects"
