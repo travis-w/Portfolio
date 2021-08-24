@@ -16,9 +16,9 @@
   "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-blog": "^1.9.4",
-    "commitizen": "^4.2.3",
+    "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
-    "vuepress": "^1.5.3"
+    "vuepress": "^1.8.2"
   },
   "config": {
     "commitizen": {
