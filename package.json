@@ -1,39 +1,28 @@
 {
-  "name": "Portfolio",
-  "version": "1.0.0",
-  "description": "Rereating personal portfolio",
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "Portfolio for Travis Weidenbenner",
   "main": "index.js",
+  "authors": {
+    "name": "Travis Weidenbenner",
+    "email": "travis@weidenbenner.com"
+  },
+  "repository": "https://github.com/travis-w/portfolio/portfolio",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --config webpack.config.prod.js",
-    "dev": "./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js --content-base build/ --progress --colors --inline --hot"
+    "serve": "vuepress dev src",
+    "build": "vuepress build src --dest build",
+    "commit": "cz"
   },
-  "author": "Travis Weidenbenner",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "@vuepress/plugin-blog": "^1.9.4",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "vuepress": "^1.8.2"
   },
-  "devDependencies": {
-    "babel-core": "^6.7.2",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-react": "^6.5.0",
-    "copy-webpack-plugin": "^4.3.1",
-    "css-loader": "^0.23.1",
-    "eslint": "^2.4.0",
-    "eslint-config-airbnb": "^6.1.0",
-    "eslint-plugin-react": "^4.2.2",
-    "file-loader": "^0.8.5",
-    "html-webpack-plugin": "^2.10.0",
-    "jade": "^1.11.0",
-    "jade-loader": "^0.8.0",
-    "json-loader": "^0.5.4",
-    "node-sass": "^3.4.2",
-    "open-browser-webpack-plugin": "0.0.2",
-    "sass-loader": "^3.2.0",
-    "style-loader": "^0.13.0",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

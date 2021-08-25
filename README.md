@@ -1,20 +1,20 @@
-## Travis Weidenbenner Portfolio [React]
-[Link to Portfolio](http://thetravisw.com)
+# portfolio
 
-My personal portfolio to display all of my projects and list previous employment
-information.
+Site deployed at 2021.travisw.dev for now
 
-##### Style
-Code adheres to the [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
+Icons: [Simple Icons](https://simpleicons.org/)
 
-##### Build
-* npm run dev - Development build (JS not minified)
-* npm run build - Production build (JS minified)
+## Project setup
+```
+npm install
+```
 
-##### Implementations
-In order to expand my knowledge and learn new frameworks/languages, I will be
-attempting to implement my portfolio in many different frameworks/languages.
-So far I have completed the following.
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-* [React](https://github.com/travis-w/Portfolio/tree/master)
-* [Elm](https://github.com/travis-w/Portfolio/tree/elm-lang)
+### Compiles and minifies for production
+```
+npm run build
+```
