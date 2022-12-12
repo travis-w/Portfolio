@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 links:
 - title: GitHub
   link: https://github.com/travis-w/bug-tracker

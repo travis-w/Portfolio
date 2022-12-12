@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 6
 links:
 - title: GitHub
   link: https://github.com/travis-w/Search-On-Twitter
