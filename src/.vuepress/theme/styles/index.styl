@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap')
 
+*
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
 html, body
   font-family: "Open Sans", sans-serif
-  height: 100%
+  min-height: 100%
   margin: 0
 
 body
@@ -17,20 +22,16 @@ a
   &:hover
     text-decoration: underline
 
-#app
-  height: 100%
-  width: 100%
-  display: flex
-  justify-content: center
-
 .theme-container
   max-width: 800px
   position: relative
   display: flex
   flex-flow: column
-  height: 100%
   width: 100%
-  
+  margin: 0 auto
+  min-height: 100vh
+  padding: 0 0 50px
+
   & > .header
     flex: 0 0 auto
   
